@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Athiti', sans-serif;
+}
+
+.bmi-body {
+    width: 100%;
+    height: 100vh;
+    background: #475a6d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    text-align: center;
+}
+
+.bmi-form {
+    position: relative;
+    box-sizing: border-box;
+    padding: 60px 30px;
+    transition: .5s;
+}
+
+.bmi-form:hover {
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.bmi-form h1 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.bmi-form input {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fff;
+    border: none;
+    background: rgba(255, 255, 255, .1);
+}
+
+.bmi-form input::placeholder {
+    color: #fff;
+}
+
+.bmi-form .home-icon {
+    margin: 50px 0 0 0;
+    width: 100px;
+    height: 30px;
+}
+
+.bmi-form button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background: #0072ff;
+}
+.bmi-form button:hover {
+    background: #005aca;
+}
+
+.result-container {
+
+}
+
+.result-container .card {
+    position: relative;
+}
+.result-container .card .face {
+    width: 350px;
+    height: 250px;
+    transition: 0.5s;
+}
+
+.result-container .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(125px);
+}
+
+.result-container .card:hover .face.face1 {
+    background: #ff0057;
+    transform: translateY(0);
+}
+
+.result-container .card .face.face1 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: 0.2;
+    transition: 0.3s;
+}
+
+.result-container .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.result-container .card .face.face1 .content h1 {
+    font-size: 70px;
+}
+
+.result-container .card .face.face1 .content h3 {
+    font-size: 30px;
+}
+
+.result-container .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+    transform: translateY(-125px);
+}
+
+.result-container .card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+.result-container .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+}
+
+.result-container .card .face.face2 .content .btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result-container .card .face.face2 .content .btn-container .bottom-icon {
+    margin: 30px 0 0 0;
+    width: 100px;
+    height: 30px;
+}
+
+@media screen and (max-width: 400px) {
+    .result-container .card .face {
+        width: 300px;
+        height: 200px;
+    }
+    .result-container .card .face.face1 {
+        transform: translateY(100px);
+    }
+    .result-container .card .face.face2 {
+        transform: translateY(-100px);
+    }
+}
