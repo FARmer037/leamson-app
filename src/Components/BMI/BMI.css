@@ -76,6 +76,7 @@
     border-radius: 25px;
     outline: none;
     font-size: 16px;
+    font-weight: 500;
     letter-spacing: 1px;
     color: #fff;
     border: none;
@@ -84,10 +85,6 @@
 }
 .bmi-form button:hover {
     background: #005aca;
-}
-
-.result-container {
-
 }
 
 .result-container .card {
@@ -110,8 +107,21 @@
 }
 
 .result-container .card:hover .face.face1 {
-    background: #ff0057;
+    /* background: #ff0057; */
     transform: translateY(0);
+}
+
+.result-container .card:hover .face.face1.red {
+    background: #cc3300;
+}
+.result-container .card:hover .face.face1.orange {
+    background: #ff9966;
+}
+.result-container .card:hover .face.face1.yellow {
+    background: #ffcc00;
+}
+.result-container .card:hover .face.face1.green {
+    background: #339900;
 }
 
 .result-container .card .face.face1 .content {

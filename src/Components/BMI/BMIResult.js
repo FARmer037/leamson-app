@@ -6,29 +6,39 @@ import { useSelector } from 'react-redux'
 const BMIResult = () => {
     const bmi = useSelector(state => state.bmi)
     const [label, setLabel] = useState('')
+    const [color, setColor] = useState('')
 
     useEffect(() => {
         result()
     }, [])
 
     const result = () => {
-        if (bmi > 30)
+        if (bmi > 30) {
             setLabel('โรคอ้วนอันตราย')
-        else if (bmi > 25)
+            setColor('red')
+        }
+        else if (bmi > 25) {
             setLabel('โรคอ้วน')
-        else if (bmi > 23)
+            setColor('orange')
+        }
+        else if (bmi > 23) {
             setLabel('น้ำหนักเกิน')
-        else if (bmi > 18.5)
+            setColor('yellow')
+        }
+        else if (bmi > 18.5) {
             setLabel('สมส่วน')
-        else
+            setColor('green')
+        }
+        else {
             setLabel('น้ำหนักต่ำกว่ามาตรฐาน')
+        }
     }
 
     return (
         <div className='bmi-body'>
             <div className='result-container'>
                 <div className='card'>
-                    <div className='face face1'>
+                    <div className={'face face1 ' + color}>
                         <div className='content'>
                             <h1>{bmi}</h1>
                             <h3>{label}</h3>

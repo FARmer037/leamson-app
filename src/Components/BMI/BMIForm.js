@@ -21,8 +21,8 @@ const BMIForm = () => {
         <div className='bmi-form'>
           <h1>BMI</h1>
           <form>
-            <input type='number' step='any' name='' placeholder='น้ำหนัก' onChange={e => setWeight(e.target.value)}></input>
-            <input type='number' step='any' name='' placeholder='ส่วนสูง' onChange={e => setHeight(e.target.value)}></input>
+            <input type='number' step='any' name='' placeholder='น้ำหนัก (kg)' onChange={e => setWeight(e.target.value)}></input>
+            <input type='number' step='any' name='' placeholder='ส่วนสูง (cm)' onChange={e => setHeight((e.target.value)/100)}></input>
           </form>
 
           <Link to={'/bmi-result'} style={{ textDecoration: 'none' }}>
