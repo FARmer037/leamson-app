@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
-import { formReducer, bmiReducer } from "./BMI/reducer";
+import { bmiReducer } from "./BMI/reducer";
+import { pressureReducer } from "./Pressure/reducer";
 
 export const reducers = combineReducers({
-    bmiForm: formReducer,
-    bmi: bmiReducer
+    bmi: bmiReducer,
+    pressure: pressureReducer
 })

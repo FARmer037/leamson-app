@@ -107,7 +107,6 @@
 }
 
 .result-container .card:hover .face.face1 {
-    /* background: #ff0057; */
     transform: translateY(0);
 }
 
@@ -115,13 +114,19 @@
     background: #cc3300;
 }
 .result-container .card:hover .face.face1.orange {
-    background: #ff9966;
+    background: #ff7400;
 }
 .result-container .card:hover .face.face1.yellow {
     background: #ffcc00;
 }
 .result-container .card:hover .face.face1.green {
     background: #339900;
+}
+.result-container .card:hover .face.face1.gray {
+    background: #64757d;
+}
+.result-container .card:hover .face.face1.white {
+    background: #777777;
 }
 
 .result-container .card .face.face1 .content {

@@ -1,47 +1,48 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FaHome, FaAngleDoubleLeft } from 'react-icons/fa'
-import { useSelector } from 'react-redux'
+import './Pressure.css'
 
-const BMIResult = () => {
-    const bmi = useSelector(state => state.bmi)
+const PressureResult = () => {
+    const pressure = useSelector(state => state.pressure)
+
     const [label, setLabel] = useState('')
     const [color, setColor] = useState('')
+
+    const result = () => {
+        if (pressure.systolic >= 180 || pressure.diastolic >= 110) {
+            setLabel('กลุ่มป่วย ระดับ 3')
+            setColor('red')
+        }
+        else if (pressure.systolic >= 160 || pressure.diastolic >= 100) {
+            setLabel('กลุ่มป่วย ระดับ 2')
+            setColor('orange')
+        }
+        else if (pressure.systolic >= 140 || pressure.diastolic >= 90) {
+            setLabel('กลุ่มป่วย ระดับ 1')
+            setColor('yellow')
+        }
+        else if (pressure.systolic >= 120 || pressure.diastolic >= 80) {
+            setLabel('กลุ่มเสี่ยง')
+            setColor('green')
+        }
+        else if (pressure.systolic < 120 || pressure.diastolic < 80) {
+            setLabel('ปกติ')
+            setColor('white')
+        }
+    }
 
     useEffect(() => {
         result()
     }, [])
-
-    const result = () => {
-        if (bmi > 30) {
-            setLabel('โรคอ้วนอันตราย')
-            setColor('red')
-        }
-        else if (bmi > 25) {
-            setLabel('โรคอ้วน')
-            setColor('orange')
-        }
-        else if (bmi > 23) {
-            setLabel('น้ำหนักเกิน')
-            setColor('yellow')
-        }
-        else if (bmi > 18.5) {
-            setLabel('สมส่วน')
-            setColor('green')
-        }
-        else {
-            setLabel('น้ำหนักต่ำกว่ามาตรฐาน')
-            setColor('gray')
-        }
-    }
-
     return (
-        <div className='bmi-body'>
+        <div className='pressure-body'>
             <div className='result-container'>
                 <div className='card'>
                     <div className={'face face1 ' + color}>
                         <div className='content'>
-                            <h1>{bmi}</h1>
+                            <h1>{pressure.systolic}/{pressure.diastolic}</h1>
                             <h3>{label}</h3>
                         </div>
                     </div>
@@ -51,7 +52,7 @@ const BMIResult = () => {
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
                             <div className='btn-container'>
-                                <Link to={'/bmi-form'} >
+                                <Link to={'/pressure-form'} >
                                     <FaAngleDoubleLeft color='#333' className='bottom-icon' />
                                 </Link>
                                 <Link to={'/'} >
@@ -66,4 +67,4 @@ const BMIResult = () => {
     )
 }
 
-export default BMIResult
+export default PressureResult
