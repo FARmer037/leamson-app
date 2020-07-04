@@ -11,25 +11,45 @@ const PressureResult = () => {
     const [color, setColor] = useState('')
 
     const result = () => {
-        if (pressure.systolic >= 180 || pressure.diastolic >= 110) {
-            setLabel('กลุ่มป่วย ระดับ 3')
-            setColor('red')
+        if (pressure.isChecked) {
+            if (pressure.systolic >= 180 || pressure.diastolic >= 110) {
+                setLabel('กลุ่มป่วย ระดับ 3')
+                setColor('red')
+            }
+            else if (pressure.systolic >= 160 || pressure.diastolic >= 100) {
+                setLabel('กลุ่มป่วย ระดับ 2')
+                setColor('orange')
+            }
+            else if (pressure.systolic >= 140 || pressure.diastolic >= 90) {
+                setLabel('กลุ่มป่วย ระดับ 1')
+                setColor('yellow')
+            }
+            else if (pressure.systolic < 140 || pressure.diastolic < 90) {
+                setLabel('ควบคุมได้')
+                setColor('green')
+            }
         }
-        else if (pressure.systolic >= 160 || pressure.diastolic >= 100) {
-            setLabel('กลุ่มป่วย ระดับ 2')
-            setColor('orange')
-        }
-        else if (pressure.systolic >= 140 || pressure.diastolic >= 90) {
-            setLabel('กลุ่มป่วย ระดับ 1')
-            setColor('yellow')
-        }
-        else if (pressure.systolic >= 120 || pressure.diastolic >= 80) {
-            setLabel('กลุ่มเสี่ยง')
-            setColor('green')
-        }
-        else if (pressure.systolic < 120 || pressure.diastolic < 80) {
-            setLabel('ปกติ')
-            setColor('white')
+        else {
+            if (pressure.systolic >= 180 || pressure.diastolic >= 110) {
+                setLabel('สงสัยป่วย')
+                setColor('red')
+            }
+            else if (pressure.systolic >= 160 || pressure.diastolic >= 100) {
+                setLabel('สงสัยป่วย')
+                setColor('orange')
+            }
+            else if (pressure.systolic >= 140 || pressure.diastolic >= 90) {
+                setLabel('สงสัยป่วย')
+                setColor('yellow')
+            }
+            else if (pressure.systolic >= 120 || pressure.diastolic >= 80) {
+                setLabel('กลุ่มเสี่ยง')
+                setColor('lightgreen')
+            }
+            else if (pressure.systolic < 120 || pressure.diastolic < 80) {
+                setLabel('ปกติ')
+                setColor('white')
+            }
         }
     }
 

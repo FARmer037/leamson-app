@@ -120,7 +120,10 @@
     background: #ffcc00;
 }
 .result-container .card:hover .face.face1.green {
-    background: #339900;
+    background: #349b00;
+}
+.result-container .card:hover .face.face1.lightgreen {
+    background: #4add00;
 }
 .result-container .card:hover .face.face1.gray {
     background: #64757d;
