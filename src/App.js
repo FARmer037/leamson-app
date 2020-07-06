@@ -5,6 +5,8 @@ import BMIForm from './Components/BMI/BMIForm';
 import BMIResult from './Components/BMI/BMIResult';
 import PressureForm from './Components/Pressure/PressureForm';
 import PressureResult from './Components/Pressure/PressureResult';
+import SugarForm from './Components/Sugar/SugarForm';
+import SugarResult from './Components/Sugar/SugarResult';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
 
         <Route path='/pressure-form' component={PressureForm} />
         <Route path='/pressure-result' component={PressureResult} />
+
+        <Route path='/sugar-form' component={SugarForm} />
+        <Route path='/sugar-result' component={SugarResult} />
       </Switch>
     </BrowserRouter>
   );
